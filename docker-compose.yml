@@ -1,0 +1,20 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: rachel
+      POSTGRES_PASSWORD: rachel
+      POSTGRES_DB: rachel
+    ports:
+      - "5432:5432"
+
+  qdrant:
+    image: qdrant/qdrant:v1.13.2
+    ports:
+      - "6333:6333"
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
